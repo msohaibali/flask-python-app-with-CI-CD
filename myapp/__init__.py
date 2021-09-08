@@ -40,7 +40,6 @@ def create_app(test_config='config'):
     db.init_app(app)
     ma.init_app(app)
 
-
     @login_manager.user_loader
     def load_user(user_id):
         return User.query.get(int(user_id))

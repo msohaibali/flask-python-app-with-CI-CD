@@ -1,7 +1,7 @@
 # Statement for enabling the development environment
 DEBUG = True
-SERVER_NAME = "0.0.0.0"
-SERVER_PORT = 8080
+# SERVER_NAME = "127.0.0.1"
+# SERVER_PORT = 8080
 
 # Define the application directory
 import os
@@ -11,7 +11,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 # SQLite for this example
 # SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'app.db')
 # SQLALCHEMY_DATABASE_URI = 'mysql://root:1234561@127.0.0.1/testing'
-SQLALCHEMY_DATABASE_URI = 'mysql://root:1234561@127.0.0.1/testing'
+SQLALCHEMY_DATABASE_URI = 'mysql://wsuperst_root:Aajfm.com1@195.201.12.44/wsuperst_testing'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 DATABASE_CONNECT_OPTIONS = {}
 

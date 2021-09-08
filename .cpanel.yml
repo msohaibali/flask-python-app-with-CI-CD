@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/wsuperst/public_html/flask_app
+    - /bin/cp -R myapp $DEPLOYPATH
+    - /bin/cp -R tests $DEPLOYPATH
+    - /bin/cp config.py $DEPLOYPATH
+    - /bin/cp requirements.txt $DEPLOYPATH
+    - /bin/cp setup.py $DEPLOYPATH
+    - /bin/cp extra_app.py $DEPLOYPATH

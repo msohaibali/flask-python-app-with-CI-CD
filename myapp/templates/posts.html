@@ -18,6 +18,9 @@
 {% if current_user.is_authenticated %}
 <table id="data" class="table table-striped", align="center">
     {% if all_posts %}
+        <button>
+            <a href="{{ url_for('posts.create_post') }}">Create New Post</a>
+        </button>
         <thead>
             <th>
                 <strong>Title</strong>
@@ -67,6 +70,9 @@
             <div>
                 No Posts Found
             </div>
+            <button>
+                <a href="{{ url_for('posts.create_post') }}">Create New Post</a>
+            </button>
         </h2>
 
     {% endif %}

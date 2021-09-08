@@ -12,6 +12,7 @@ install:
 # command to run tests
 script:
 # unit test
+- python extra_app.py
 - python -m pytest -v
 
 # linting test

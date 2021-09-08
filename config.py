@@ -1,7 +1,7 @@
 # Statement for enabling the development environment
 DEBUG = True
-HOST = "127.0.0.1"
-port = 8080
+SERVER_NAME = "0.0.0.0"
+SERVER_PORT = 8080
 
 # Define the application directory
 import os

@@ -5,7 +5,6 @@ import pytest
 
 from myapp import create_app
 from myapp import db
-import myapp
 
 
 @pytest.fixture

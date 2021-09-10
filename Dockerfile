@@ -1,9 +1,8 @@
 FROM ubuntu:latest
 MAINTAINER Sohaib "sohaibayub9@gmail.com"
 RUN apt-get update -y
-RUN apt-get install -y python3-pip python-dev build-essential
+RUN apt-get install -y python3-pip python-dev build-essential python3-sqlalchemy python3-mysqlclient python3-mysqldb
 ADD . /myapp
 WORKDIR /myapp
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["extra_app.py"]
+ENTRYPOINT python3 extra_app.py

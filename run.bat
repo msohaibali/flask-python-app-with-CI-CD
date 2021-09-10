@@ -1,1 +1,1 @@
-python extra_app.py
+python run.py

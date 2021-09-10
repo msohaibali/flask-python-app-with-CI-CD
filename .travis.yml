@@ -8,7 +8,7 @@ python:
 # command to install dependencies
 install:
 - pip install -r requirements.txt
-- apt-get install python3-sqlalchemy python3-mysqldb
+- sudo apt-get install python3-sqlalchemy python3-mysqldb
 
 # command to run tests
 script:

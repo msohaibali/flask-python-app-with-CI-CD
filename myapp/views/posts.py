@@ -1,7 +1,9 @@
 from flask.json import jsonify
-from datetime import datetime
+from datetime import date, datetime
 from myapp.model.post_model import Posts
 from myapp.model.db_extension import db
+from webargs import fields
+from webargs.flaskparser import use_args
 from myapp.model.post_model import Posts, PostsSchema
 from flask import Blueprint, render_template, request, url_for, flash, redirect
 from flask_login import login_required, current_user
@@ -51,11 +53,28 @@ def create_post():
     return redirect(url_for('posts.get_posts'))
 
 @login_required
-@posts.route('/updatepost',methods=['PUT'])
+@posts.route('/updatepost',methods=['PUT', 'POST'])
 def update_post():
-    pass
+    post_id = request.form.get('id')
+    target_post_data = Posts.query.get_or_404(post_id)
+    if target_post_data:
+        post_title = target_post_data.get('title')
+        post_description = target_post_data.get('description')
+        created_at = target_post_data.get('created_at')
+        user_id = current_user.id
+        updated_at = datetime.now()
+        
+        pass
 
 @login_required
-@posts.route('/deletepost',methods=['DELETE'])
+@posts.route('/deletepost',methods=['GET'])
 def delete_post():
-    pass
+    post_id = request.args.get('id')
+    breakpoint()
+    target_post = Posts.query.get_or_404(post_id)
+    if target_post:
+        db.session.delete(target_post)
+        db.session.commit()
+        return redirect(url_for('posts.get_posts'))
+    else:
+        return redirect(url_for('posts.get_posts'))

@@ -20,6 +20,7 @@ class PostsSchema(ma.Schema):
     #     model = Posts
     #     fields = ('title', 'description', 'created_at', 'user_id')
     #     include_fk = True
+    id = fields.Int()
     title = fields.Str()
     description = fields.Str()
     created_at = fields.DateTime()

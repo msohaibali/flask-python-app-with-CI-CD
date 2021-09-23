@@ -59,6 +59,13 @@
                 {{single_post.user_id}}
             </td>
 
+            <td>
+                <form action="{{ url_for('posts.delete_post') }}" method=GET class=delete-movie>
+                    <input type=hidden value="{{ single_post.id }}" name=id />
+                    <input type=submit value="Delete"/>
+                    
+                </form>
+            </td>
 
         </tr>
         {% endfor %}
